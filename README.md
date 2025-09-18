@@ -1,8 +1,3 @@
-Tabii Arda 👍 Senin projen için güzel bir **README.md** tasarladım. Hem proje açıklaması, hem kurulum adımları, hem de endpoint’lere dair temel bilgi içeriyor.
-
----
-
-```markdown
 # Fitness Tracking System (MERN Stack)
 
 ## 📌 Project Overview
