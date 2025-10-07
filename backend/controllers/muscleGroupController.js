@@ -19,7 +19,7 @@ export async function listMuscleGroupsCtrl(req, res, next) {
     try {
         const data = await getAllMuscleGroups();
         res.json({ data });
-    } catch {
+    } catch (e){
     next(e)
     }
 }

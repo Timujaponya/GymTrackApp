@@ -21,11 +21,13 @@ export async function createMeasurementCtrl(req, res, next) {
 export async function listMeasurementsCtrl(req, res, next) {
   try {
     const items = await getAllMeasurements();
-    res.json({ items });
-  } catch {
+    // normalize list response shape
+    res.json({ data: items });
+  } catch (e) {
     next(e)
   }
 }
+
 // GET /api/Measurements/:id
 export async function getMeasurementCtrl(req, res, next) {
   try {

@@ -20,9 +20,10 @@ export async function createPlanCtrl(req, res, next) {
 // GET /api/Plans
 export async function listPlansCtrl(req, res, next) {
   try {
-    const { items, total, page, limit } = await getAllPlans(req.query);
-    res.json({ data: items, page, limit, total });
-  } catch {
+    // service currently returns an array; return as { data: [...] }
+    const items = await getAllPlans(req.query);
+    res.json({ data: items });
+  } catch(e) {
     next(e)
   }
 }

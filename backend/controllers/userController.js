@@ -21,8 +21,8 @@ export async function createUserCtrl(req, res, next) {
 export async function listUsersCtrl(req, res, next) {
   try {
     const users = await getAllUsers(req.query);
-    res.json(users);
-  } catch {
+    res.json({ data: users });
+  } catch(e) {
     next(e)
   }
 }

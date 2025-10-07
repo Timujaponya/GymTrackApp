@@ -1,4 +1,3 @@
-// src/controllers/exercises.controller.js
 import {
   createExercise,
   getAllExercises,
@@ -20,9 +19,9 @@ export async function createExerciseCtrl(req, res, next) {
 // GET /api/exercises
 export async function listExercisesCtrl(req, res, next) {
   try {
-    const all_Exercises  = await getAllExercises(req.query);
-    res.json({ all_Exercises});
-  } catch(e) {
+    const items = await getAllExercises(req.query);
+    res.json({ data: items });
+  } catch (e) {
     next(e)
   }
 }
